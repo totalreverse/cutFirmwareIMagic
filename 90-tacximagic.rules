@@ -1,0 +1,8 @@
+ACTION!="add", GOTO="imagic_end"
+SUBSYSTEM!="usb", GOTO="imagic_end"
+
+ATTRS{idVendor}=="3561", ATTRS{idProduct}=="1902", MODE="0666"
+ATTRS{idVendor}=="3561", ATTRS{idProduct}=="1902", RUN+="/sbin/fxload -I /lib/firmware/tacximagic.hex -D $root/$name" 
+
+LABEL="imagic_end"
+
